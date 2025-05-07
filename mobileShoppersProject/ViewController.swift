@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        networkManager.delegate = self
         networkManager.performApiCall()
     }
     
@@ -36,7 +37,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        v.modalPresentationStyle = .fullScreen
 //        present(v, animated: true)
         self.navigationController?.pushViewController(v, animated: true)
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,7 +47,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ProductTableViewCell
         
         let product = products[indexPath.row]
-        
         //cell?.imageViewLabel.image = UIImage(named: products.image) // work on loading image
         cell?.textFieldLabel.text = product.title
         
@@ -58,6 +57,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 extension ViewController: ViewControllerProtocol {
     func refreshUI(with response: [DataModel]) {
+        print(response)
         DispatchQueue.main.async {
             self.products = response
             self.tableView.reloadData()

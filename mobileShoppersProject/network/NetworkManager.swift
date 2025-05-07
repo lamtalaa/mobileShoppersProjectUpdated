@@ -50,6 +50,9 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 let decodedData = try decoder.decode([DataModel].self, from: data)
+//                guard let delegate = self.delegate else {
+//                    print("delegate not found 😱")
+//                    return }
                 self.delegate?.refreshUI(with: decodedData)
             } catch {
                 print("Decoding error:", error)

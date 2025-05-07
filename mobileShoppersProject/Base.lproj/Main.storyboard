@@ -70,7 +70,7 @@
                     <navigationItem key="navigationItem" id="DnM-TI-sBa"/>
                     <connections>
                         <outlet property="tableView" destination="sDm-OO-SB2" id="nE9-6P-NwG"/>
-                        <segue destination="92Z-zt-yGu" kind="show" identifier="ProductViewController" id="QpS-Qo-vZW"/>
+                        <segue destination="92Z-zt-yGu" kind="show" identifier="ProductViewControllerSegue" id="QpS-Qo-vZW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -80,7 +80,7 @@
         <!--Product View Controller-->
         <scene sceneID="IAx-hP-ndZ">
             <objects>
-                <viewController id="92Z-zt-yGu" customClass="ProductViewController" customModule="mobileShoppersProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductViewController" id="92Z-zt-yGu" customClass="ProductViewController" customModule="mobileShoppersProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lnK-FZ-jlM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
