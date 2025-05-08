@@ -34,8 +34,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 = sb.instantiateViewController(withIdentifier: "ProductViewController") as? ProductViewController
         else { return }
         v.product = products[indexPath.row]
-//        v.modalPresentationStyle = .fullScreen
-//        present(v, animated: true)
         self.navigationController?.pushViewController(v, animated: true)
     }
     
@@ -47,7 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ProductTableViewCell
         
         let product = products[indexPath.row]
-        //cell?.imageViewLabel.image = UIImage(named: products.image) // work on loading image
+        cell?.displayImage(urlString: product.backgroundImage)
         cell?.textFieldLabel.text = product.title
         
         return cell ?? UITableViewCell()
